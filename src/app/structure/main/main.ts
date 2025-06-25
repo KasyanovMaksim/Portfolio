@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import {Card} from '../../components/card/card';
 
 @Component({
   selector: 'app-main',
-  imports: [],
+  imports: [
+    Card
+  ],
   templateUrl: './main.html',
   styleUrl: './main.scss'
 })
