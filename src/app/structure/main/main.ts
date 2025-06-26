@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
-import {Card} from '../../components/card/card';
+import {Hero} from './hero/hero';
+import {Summary} from './summary/summary';
+import {Cases} from './cases/cases';
+import {About} from './about/about';
 
 @Component({
-  selector: 'app-main',
+  selector: 'main',
   imports: [
-    Card
+    Hero,
+    Summary,
+    Cases,
+    About
   ],
   templateUrl: './main.html',
   styleUrl: './main.scss'

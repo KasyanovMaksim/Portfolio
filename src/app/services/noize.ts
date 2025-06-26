@@ -52,7 +52,7 @@ export class NoiseService {
       canvas.style.left = '-10px';
       canvas.style.top = '-10px';
       canvas.style.pointerEvents = 'none';
-      canvas.style.zIndex = '0';
+      canvas.style.zIndex = '1';
       canvas.style.opacity = `${opacity}`;
 
       el.appendChild(canvas);

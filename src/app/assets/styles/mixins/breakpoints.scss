@@ -1,0 +1,20 @@
+$breakpoints: (
+  mobile: 576px,
+  tablet: 768px,
+  desktop-sm: 1024px,
+  desktop-md: 1280px,
+  desktop-lg: 1440px,
+  desktop-hg: 1920px,
+);
+
+@mixin respond($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+
+  @if $size {
+    @media (max-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found in $breakpoints.";
+  }
+}
