@@ -1,0 +1,39 @@
+:host{
+  display: block;
+  height: calc(100vh - 60px);
+  .hero{
+    &__me{
+      height: calc(100vh - 180px);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      &-img{
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        object-fit: contain;
+      }
+      &-hello{
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &-textContainer{
+        width: 680px;
+      }
+      &-greetings{
+        font-size: 150px;
+        span{
+          color: transparent;
+          -webkit-text-stroke: 1px white;
+        }
+      }
+      &-name{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

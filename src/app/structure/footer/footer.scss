@@ -1,0 +1,43 @@
+:host{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .footer{
+    &__copyrights,
+    &__signature{
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      &-rowOne{
+        font-size: 12px;
+        font-weight: bold;
+      }
+      &-rowTwo{
+        font-size: 10px;
+        font-weight: bold;
+        color: var(--color-neutral-600);
+      }
+    }
+    &__contacts{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      a{
+        width: 28px;
+        height: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-neutral-700);
+        border-radius: 100%;
+      }
+    }
+    &__signature{
+      &-rowTwo{
+        display: flex;
+        justify-content: end;
+      }
+    }
+  }
+
+}
