@@ -1,0 +1,32 @@
+:host{
+  width: 100%;
+  border-radius: 16px;
+  padding: 4px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-neutral-700);
+
+}
+.case{
+  &__title{
+    background-color: var(--color-neutral-800);
+    border-radius: 12px;
+    padding-left: 16px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-neutral-700);
+    &-text{
+
+    }
+  }
+  &__body{
+    background-color: var(--color-neutral-800);
+    border-radius: 12px;
+    min-height: 600px;
+    padding: 24px;
+    border: 1px solid var(--color-neutral-700);
+  }
+}
