@@ -53,3 +53,29 @@
     }
   }
 }
+@media (max-width: 768px) {
+  :host{
+    flex-direction: column;
+    & > *{
+      width: 100%;
+    }
+  }
+
+  .summary-grid {
+    div:nth-child(8){
+      display: none;
+    }
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "components        icons                wireframes"
+    "elements          elements               elements"
+    "benefits          benefits               benefits"
+    "foundations       foundations         foundations"
+    "project           project                 project"
+    "documentation     documentation     documentation"
+  }
+  .summary-description{
+    padding: 0;
+    font-size: 32px;
+  }
+}

@@ -29,18 +29,28 @@ export class App implements AfterViewInit {
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.noise.attach({
+      const isMobile = window.innerWidth <= 768; // можно подкорректировать порог
+      const desktopOptions = {
         color: '#FFFFFF',
-        opacity: 0.02,
+        density: 1,
+        layerCount: 12,
         grainSize: 1.4,
+        opacity: 0.02,
+        frameDuration: 150,
+        maxOffsetPercent: 0.09
+      };
+
+      const mobileOptions = {
+        color: '#FFFFFF',
         density: 0.8,
         layerCount: 6,
+        grainSize: 0.9,
+        opacity: 0.02,
         frameDuration: 150,
         maxOffsetPercent: 0.99
-      });
+      };
+
+      this.noise.attach(isMobile ? mobileOptions : desktopOptions);
     }
   }
-
-
-
 }

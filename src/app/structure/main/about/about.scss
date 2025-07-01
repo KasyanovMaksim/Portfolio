@@ -107,3 +107,20 @@
     gap: 16px;
   }
 }
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(8, auto);
+    gap: 16px;
+    grid-template-areas:
+      "summary"
+      "experience"
+      "mainTools"
+      "myBackground"
+      "myBackground"
+      "hardSkills"
+      "courses"
+      "education"
+      "hobbies"
+  }
+}

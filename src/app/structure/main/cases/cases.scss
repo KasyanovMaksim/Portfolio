@@ -12,3 +12,8 @@
   flex-wrap: nowrap;
 }
 
+@media (max-width: 768px) {
+  .cases__wrapper {
+    flex-direction: column;
+  }
+}

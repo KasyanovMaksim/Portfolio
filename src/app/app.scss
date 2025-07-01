@@ -9,11 +9,16 @@
   padding: 0 32px;
   box-sizing: border-box;
   place-items: center;
-
+  overflow: hidden;
   > * {
     width: 100%;
     max-width: 1280px;
     margin-inline: auto;
   }
 
+}
+@media (max-width: 768px) {
+  :host{
+    padding: 0 16px;
+  }
 }
