@@ -10,7 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Header } from './structure/header/header';
 import { Main } from './structure/main/main';
 import { Footer } from './structure/footer/footer';
-import { NoiseService } from './services/noize';
+import { ViewportNoiseService } from './services/noize';
 
 @Component({
   selector: 'app-root',
@@ -25,15 +25,21 @@ export class App implements AfterViewInit {
   private el = inject(ElementRef<HTMLElement>);
   private platformId = inject(PLATFORM_ID);
 
-  constructor(private noise: NoiseService) {}
+  constructor(private noise: ViewportNoiseService) {}
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.noise.attachNoiseToElement(this.el.nativeElement, {
+      this.noise.attach({
         color: '#FFFFFF',
-        opacity: 0.03,
-        speed: 0.05
+        opacity: 0.01,
+        grainSize: 2,
+        speed: 50,
+        layerCount: 20,
+        updateFrequency: 24
       });
     }
   }
+
+
+
 }

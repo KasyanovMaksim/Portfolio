@@ -5,7 +5,10 @@
   gap: 50px;
   margin-bottom: 100px;
 }
-.cases__wrapper{
+.cases__wrapper {
   display: flex;
   gap: 16px;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
+
