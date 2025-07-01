@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:Portfolio": "node dist/Portfolio/server/server.mjs",
     "deploy": "ng build --base-href=/Portfolio/ && npx angular-cli-ghpages --dir=dist/Portfolio/browser",
-    "push": "git add . && git commit -m \"commit\" && git push"
+    "push":  "node tools/auto-commit.js"
   },
   "private": true,
   "dependencies": {
