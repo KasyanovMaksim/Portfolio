@@ -7,7 +7,7 @@
     &__me{
       display: flex;
       align-items: center;
-      height: calc(100% - 60px);
+      height: calc(100% - 90px);
       width: 100%;
       padding-top: 10%;
       &-inner{
@@ -48,8 +48,7 @@
     &__info{
       display: flex;
       justify-content: space-between;
-      align-items: end;
-      padding-bottom: 24px;
+      align-items: start;
       &-wrapper{
         display: grid;
         grid-template-columns: 1fr auto 1fr;

@@ -31,11 +31,12 @@ export class App implements AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       this.noise.attach({
         color: '#FFFFFF',
-        opacity: 0.01,
-        grainSize: 2,
-        speed: 50,
-        layerCount: 20,
-        updateFrequency: 24
+        opacity: 0.02,
+        grainSize: 1.4,
+        density: 0.8,
+        layerCount: 6,
+        frameDuration: 150,
+        maxOffsetPercent: 0.99
       });
     }
   }

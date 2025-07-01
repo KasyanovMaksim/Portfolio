@@ -4,12 +4,14 @@ import { WINDOW } from '../tokens/window.token';
 
 interface VirtualLayer {
   pattern: CanvasPattern;
-  t: number;
-  speed: number;
-  baseSpeed: number;
-  phase: number;
   opacity: number;
-  lastUpdate: number;
+  offsetX1: number;
+  offsetX2: number;
+  offsetY1: number;
+  offsetY2: number;
+  direction: boolean;
+  frameDuration: number;
+  lastTimestamp: number;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -18,7 +20,6 @@ export class ViewportNoiseService {
   private ctx: CanvasRenderingContext2D | null = null;
   private layers: VirtualLayer[] = [];
   private animationId = 0;
-  private updateFrequency = 1000;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -29,19 +30,22 @@ export class ViewportNoiseService {
     color?: string;
     opacity?: number;
     grainSize?: number;
-    speed?: number;
+    density?: number;
     layerCount?: number;
-    updateFrequency?: number;
+    frameDuration?: number;
+    maxOffsetPercent?: number;
   }) {
     if (this.canvas) return;
 
     const grainSize = options?.grainSize ?? 2;
     const baseOpacity = options?.opacity ?? 0.03;
     const color = options?.color ?? '#FFFFFF';
-    const baseSpeed = options?.speed ?? 0.2;
     const layerCount = options?.layerCount ?? 6;
-    this.updateFrequency = options?.updateFrequency ?? 1000;
+    const density = Math.max(0, Math.min(1, options?.density ?? 1));
+    const frameDuration = options?.frameDuration ?? 800;
+    const maxOffsetPercent = options?.maxOffsetPercent ?? 0.0015;
 
+    // Create canvas
     this.canvas = this.document.createElement('canvas');
     const ctx = this.canvas.getContext('2d');
     if (!ctx) return;
@@ -60,21 +64,29 @@ export class ViewportNoiseService {
     this.document.body.appendChild(this.canvas);
     this.resizeCanvas();
 
-    const now = Date.now();
+    const width = this.window.innerWidth;
+    const height = this.window.innerHeight;
 
-    this.layers = Array.from({ length: layerCount }, () => {
-      const tile = this.generateGrainTile(grainSize, color);
-      const pattern = ctx.createPattern(tile, 'repeat');
-      const layerBaseSpeed = baseSpeed * (0.5 + Math.random()); // сохраняем навсегда
+    // Layers with different directions and offsets
+    this.layers = Array.from({ length: layerCount }, (_, i) => {
+      const tile = this.generateGrainTile(grainSize, color, density);
+      const pattern = ctx.createPattern(tile, 'repeat')!;
+
+      const offsetStepX = width * maxOffsetPercent * (i + 1);
+      const offsetStepY = height * maxOffsetPercent * (i + 1);
+
+      const isEven = i % 2 === 0;
 
       return {
-        pattern: pattern!,
-        t: Math.random() * 1000,
-        baseSpeed: layerBaseSpeed,
-        speed: layerBaseSpeed,
-        phase: Math.random() * Math.PI * 2,
+        pattern,
         opacity: baseOpacity,
-        lastUpdate: now,
+        offsetX1: isEven ? -offsetStepX : 0,
+        offsetX2: isEven ? offsetStepX : 0,
+        offsetY1: isEven ? 0 : -offsetStepY,
+        offsetY2: isEven ? 0 : offsetStepY,
+        direction: true,
+        frameDuration,
+        lastTimestamp: performance.now(),
       };
     });
 
@@ -82,7 +94,7 @@ export class ViewportNoiseService {
     this.animate();
   }
 
-  private generateGrainTile(grainSize: number, color: string): HTMLCanvasElement {
+  private generateGrainTile(grainSize: number, color: string, density: number): HTMLCanvasElement {
     const tile = this.document.createElement('canvas');
     tile.width = 300;
     tile.height = 300;
@@ -95,6 +107,8 @@ export class ViewportNoiseService {
 
     for (let y = 0; y < tile.height; y += grainSize) {
       for (let x = 0; x < tile.width; x += grainSize) {
+        if (Math.random() > density) continue;
+
         const noise = Math.random() * 255;
         ctx.fillStyle = `rgb(${(r + noise) / 2}, ${(g + noise) / 2}, ${(b + noise) / 2})`;
         ctx.fillRect(x, y, grainSize, grainSize);
@@ -115,23 +129,20 @@ export class ViewportNoiseService {
     const canvas = this.canvas;
     if (!ctx || !canvas) return;
 
+    const now = performance.now();
     const { width, height } = canvas;
-    const now = Date.now();
-
     ctx.clearRect(0, 0, width, height);
 
-    this.layers.forEach(layer => {
-      // Смена направления и скорости
-      if (now - layer.lastUpdate >= this.updateFrequency) {
-        layer.phase = Math.random() * Math.PI * 2;
-        layer.speed = layer.baseSpeed * (0.8 + Math.random() * 0.4); // ±20%
-        layer.lastUpdate = now;
+    for (const layer of this.layers) {
+      const delta = now - layer.lastTimestamp;
+
+      if (delta >= layer.frameDuration) {
+        layer.direction = !layer.direction;
+        layer.lastTimestamp = now;
       }
 
-      layer.t += 0.01;
-
-      const offsetX = Math.sin(layer.t + layer.phase) * 2 * layer.speed;
-      const offsetY = Math.cos(layer.t + layer.phase) * 2 * layer.speed;
+      const offsetX = layer.direction ? layer.offsetX1 : layer.offsetX2;
+      const offsetY = layer.direction ? layer.offsetY1 : layer.offsetY2;
 
       ctx.save();
       ctx.translate(offsetX, offsetY);
@@ -139,7 +150,7 @@ export class ViewportNoiseService {
       ctx.fillStyle = layer.pattern;
       ctx.fillRect(-offsetX, -offsetY, width, height);
       ctx.restore();
-    });
+    }
 
     this.animationId = this.window.requestAnimationFrame(this.animate);
   };
