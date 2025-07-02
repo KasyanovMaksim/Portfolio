@@ -22,6 +22,10 @@ time, mark, audio, video {
   &:focus {
     outline: none;
   }
+  &::selection {
+    background: var(--color-neutral-200); /* Цвет фона при выделении */
+    color: var(--color-neutral-900);      /* Цвет текста при выделении */
+  }
 }
 
 html,
