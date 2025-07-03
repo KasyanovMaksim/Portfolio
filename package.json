@@ -9,10 +9,11 @@
     "test": "ng test",
     "serve:ssr:Portfolio": "node dist/Portfolio/server/server.mjs",
     "deploy": "ng build --base-href=/Portfolio/ && npx angular-cli-ghpages --dir=dist/Portfolio/browser",
-    "push":  "node tools/auto-commit.js"
+    "push": "node tools/auto-commit.js"
   },
   "private": true,
   "dependencies": {
+    "@angular/cdk": "^20.0.5",
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",

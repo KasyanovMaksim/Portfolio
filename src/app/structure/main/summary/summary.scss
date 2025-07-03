@@ -2,6 +2,7 @@
   display: flex;
   gap: 16px;
   margin-bottom: 100px;
+  padding: 0 32px;
   & > *{
     width: 50%;
   }
@@ -32,7 +33,6 @@
     "benefits       benefits    scroll        documentation     documentation";
   div{
     display: flex;
-    width: 100%;
     height: 100%;
   }
   &__item{
@@ -55,6 +55,7 @@
 }
 @media (max-width: 768px) {
   :host{
+    padding: 0 16px;
     flex-direction: column;
     & > *{
       width: 100%;
@@ -74,6 +75,7 @@
     "project           project                 project"
     "documentation     documentation     documentation"
   }
+
   .summary-description{
     padding: 0;
     font-size: 32px;

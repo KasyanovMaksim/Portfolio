@@ -1,6 +1,6 @@
 <section-title>ABOUT ME</section-title>
 <div class="about-grid">
-  <div class="about-grid__inner" style="grid-area: summary;">
+  <div class="about-grid__wrapper" style="grid-area: summary;">
     <app-surface class="about-grid__item">
       <div class="about-grid__item-summary">
         <p class="about-grid__item-summary-text">
@@ -17,172 +17,193 @@
       </div>
     </app-surface>
   </div>
-  <div class="about-grid__inner" style="grid-area: experience;">
+  <div class="about-grid__wrapper" style="grid-area: experience;">
     <app-surface class="about-grid__item">
-      <h3 class="about-grid__title">EXPERIENCE</h3>
-      <ul class="about-grid__cases">
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2025 — Now'"
-            [role]="'Lead Designer & Architect'"
-            [place]="'FrontendCrafts'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2023 — 2024'"
-            [role]="'Product Designer'"
-            [place]="'VoucherCart'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2022 — 2023'"
-            [role]="'Full Stack Developer'"
-            [place]="'VoucherCart'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2021 — 2022'"
-            [role]="'Front-end Developer'"
-            [place]="'AI SCREEN'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2021'"
-            [role]="'Front-end Developer'"
-            [place]="'Freelance'">
-          </app-about-exp-case>
-        </li>
-      </ul>
-    </app-surface>
-  </div>
-  <div class="about-grid__inner" style="grid-area: mainTools;">
-    <app-surface class="about-grid__item">
-      <h3 class="about-grid__title">MAIN TOOLS</h3>
-      <div class="about-grid__item-tools">
-        <img src="assets/images/svg/skills/Figma.svg" alt="Figma">
-        <img src="assets/images/svg/skills/Webflow.svg" alt="Webflow">
-        <img src="assets/images/svg/skills/Framer.svg" alt="Framer">
-        <img src="assets/images/svg/skills/Lovable.svg" alt="Lovable">
-        <img src="assets/images/svg/skills/Notion.svg" alt="Notion">
-        <img src="assets/images/svg/skills/ChatGPT.svg" alt="ChatGPT">
-        <img src="assets/images/svg/skills/Slack.svg" alt="Slack">
-        <img src="assets/images/svg/skills/Jira.svg" alt="Jira">
-        <img src="assets/images/svg/skills/Angular.svg" alt="Angular">
-        <img src="assets/images/svg/skills/Sass.svg" alt="Sass">
-        <img src="assets/images/svg/skills/Git.svg" alt="Git">
-        <img src="assets/images/svg/skills/Bitbucket.svg" alt="Bitbucket">
-        <img src="assets/images/svg/skills/Windows.svg" alt="Figma">
-        <img src="assets/images/svg/skills/WSL.svg" alt="WSL">
-        <img src="assets/images/svg/skills/MacOS.svg" alt="MacOS">
-        <img src="assets/images/svg/skills/Linux.svg" alt="Linux">
+      <div class="about-grid__item-inner">
+        <h3 class="about-grid__title">EXPERIENCE</h3>
+        <ul class="about-grid__cases">
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2025 — Now'"
+              [role]="'Lead Designer & Architect'"
+              [place]="'FrontendCrafts'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2023 — 2024'"
+              [role]="'Product Designer'"
+              [place]="'VoucherCart'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2022 — 2023'"
+              [role]="'Full Stack Developer'"
+              [place]="'VoucherCart'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2021 — 2022'"
+              [role]="'Front-end Developer'"
+              [place]="'AI SCREEN'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2021'"
+              [role]="'Front-end Developer'"
+              [place]="'Freelance'">
+            </app-about-exp-case>
+          </li>
+        </ul>
       </div>
     </app-surface>
   </div>
-  <div class="about-grid__inner" style="grid-area: myBackground;">
+  <div class="about-grid__wrapper" style="grid-area: mainTools;">
     <app-surface class="about-grid__item">
-      <h3 class="about-grid__title">MY BACKGROUND</h3>
-      <div  class="about-grid__item-myBackground">
-        <p><span>My journey began</span> as <span>Front-end</span> developer, gradually evolving into complex <span>Angular architectures</span> and full-scale <span>Design systems</span>. I started as a layout developer and freelancer — but over time, I became deeply inspired by the harmony between <span>Product design</span> and front-end <span>Engineering.</span></p>
-        <p>This <span>dual perspective</span> gave me an edge: I began to see systems not just as <span>code and visuals,</span> but as <span>living interfaces</span> shaped by <span>logic, clarity and user roles.</span> Could I build <span>not just screens</span> — but <span>meaningful and scalable</span> experiences?</p>
-        <p>Today, I combine <span>Product thinking</span> with Angular expertise, <span>crafting modular libraries,</span> and <span>UI tokens</span> for <span>visual systems</span> that empower teams and ensure <span>consistency</span> across brands. I specialize in <span>organizing complex interfaces</span>  — with <span>role-based flows,</span> minimal prototyping, and full <span>accessibility in mind.</span></p>
+      <div class="about-grid__item-inner">
+        <h3 class="about-grid__title">MAIN TOOLS</h3>
+        <div class="about-grid__item-tools">
+          <img src="assets/images/svg/skills/Figma.svg" alt="Figma">
+          <img src="assets/images/svg/skills/Webflow.svg" alt="Webflow">
+          <img src="assets/images/svg/skills/Framer.svg" alt="Framer">
+          <img src="assets/images/svg/skills/Lovable.svg" alt="Lovable">
+          <img src="assets/images/svg/skills/Notion.svg" alt="Notion">
+          <img src="assets/images/svg/skills/ChatGPT.svg" alt="ChatGPT">
+          <img src="assets/images/svg/skills/Slack.svg" alt="Slack">
+          <img src="assets/images/svg/skills/Jira.svg" alt="Jira">
+          <img src="assets/images/svg/skills/Angular.svg" alt="Angular">
+          <img src="assets/images/svg/skills/Sass.svg" alt="Sass">
+          <img src="assets/images/svg/skills/Git.svg" alt="Git">
+          <img src="assets/images/svg/skills/Bitbucket.svg" alt="Bitbucket">
+          <img src="assets/images/svg/skills/Windows.svg" alt="Figma">
+          <img src="assets/images/svg/skills/WSL.svg" alt="WSL">
+          <img src="assets/images/svg/skills/MacOS.svg" alt="MacOS">
+          <img src="assets/images/svg/skills/Linux.svg" alt="Linux">
+
+
+          <img src="assets/images/svg/skills/Bitbucket.svg" alt="Bitbucket">
+          <img src="assets/images/svg/skills/Windows.svg" alt="Figma">
+          <img src="assets/images/svg/skills/WSL.svg" alt="WSL">
+          <img src="assets/images/svg/skills/MacOS.svg" alt="MacOS">
+          <img src="assets/images/svg/skills/Linux.svg" alt="Linux">
+        </div>
       </div>
     </app-surface>
   </div>
-  <div class="about-grid__inner" style="grid-area: hardSkills;">
+  <div class="about-grid__wrapper" style="grid-area: myBackground;">
     <app-surface class="about-grid__item">
-      <h3 class="about-grid__title">HARD SKILLS</h3>
-      <p class="about-grid__item-hardSkills">Design Systems Architecture • Component-based Design • SaaS • Dashboards • Adaptive Layouts • WCAG • Information Architecture • Interaction Design • User Flows • Wireframing • Prototyping
-      </p>
+      <div class="about-grid__item-inner">
+        <h3 class="about-grid__title">MY BACKGROUND</h3>
+        <div  class="about-grid__item-myBackground">
+          <p><span>My journey began</span> as <span>Front-end</span> developer, gradually evolving into complex <span>Angular architectures</span> and full-scale <span>Design systems</span>. I started as a layout developer and freelancer — but over time, I became deeply inspired by the harmony between <span>Product design</span> and front-end <span>Engineering.</span></p>
+          <p>This <span>dual perspective</span> gave me an edge: I began to see systems not just as <span>code and visuals,</span> but as <span>living interfaces</span> shaped by <span>logic, clarity and user roles.</span> Could I build <span>not just screens</span> — but <span>meaningful and scalable</span> experiences?</p>
+          <p>Today, I combine <span>Product thinking</span> with Angular expertise, <span>crafting modular libraries,</span> and <span>UI tokens</span> for <span>visual systems</span> that empower teams and ensure <span>consistency</span> across brands. I specialize in <span>organizing complex interfaces</span>  — with <span>role-based flows,</span> minimal prototyping, and full <span>accessibility in mind.</span></p>
+        </div>
+      </div>
     </app-surface>
   </div>
-  <div class="about-grid__inner" style="grid-area: courses;">
+  <div class="about-grid__wrapper" style="grid-area: hardSkills;">
     <app-surface class="about-grid__item">
-      <h3 class="about-grid__title">COURSES</h3>
-      <ul class="about-grid__cases">
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2023'"
-            [role]="'Master Digital Product Design: \n'+
+      <div class="about-grid__item-inner">
+        <h3 class="about-grid__title">HARD SKILLS</h3>
+        <p class="about-grid__item-hardSkills">Design Systems Architecture • Component-based Design • SaaS • Dashboards • Adaptive Layouts • WCAG • Information Architecture • Interaction Design • User Flows • Wireframing • Prototyping
+        </p>
+      </div>
+    </app-surface>
+  </div>
+  <div class="about-grid__wrapper" style="grid-area: courses;">
+    <app-surface class="about-grid__item">
+      <div class="about-grid__item-inner">
+        <h3 class="about-grid__title">COURSES</h3>
+        <ul class="about-grid__cases">
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2023'"
+              [role]="'Master Digital Product Design: \n'+
 'UX Research & UI Design'"
-            [place]="'Udemy'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2023'"
-            [role]="'Figma UI UX Design Advanced'"
-            [place]="'Udemy'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2022'"
-            [role]="'Angular - The Complete Guide'"
-            [place]="'Udemy'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2021'"
-            [role]="'Webflow Essentials Course'"
-            [place]="'Udemy'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2020'"
-            [role]="'Front-end Developer'"
-            [place]="'NiX Solutions'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2020'"
-            [role]="'Front-end Developer'"
-            [place]="'EPAM'">
-          </app-about-exp-case>
-        </li>
-      </ul>
-    </app-surface>
-  </div>
-  <div class="about-grid__inner" style="grid-area: education;">
-    <app-surface class="about-grid__item">
-      <h3 class="about-grid__title">EDUCATION</h3>
-      <ul class="about-grid__cases">
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2013 — 2019'"
-            [role]="'Electronic engineer (Master)'"
-            [place]="'Kharkiv National University of \n'+
-'Radio Electronics'">
-          </app-about-exp-case>
-        </li>
-        <li class="about-grid__cases-item">
-          <app-about-exp-case
-            [period]="'2015 — 2017'"
-            [role]="'Metrological support of troops'"
-            [place]="'Kharkiv National University\n'+
-' of the Air Force'">
-          </app-about-exp-case>
-        </li>
-      </ul>
-    </app-surface>
-  </div>
-  <div class="about-grid__inner" style="grid-area: hobbies;">
-    <app-surface class="about-grid__item">
-      <h3 class="about-grid__title">HOBBIES & INTERESTS</h3>
-      <div class="about-grid__item-hobbies">
-        <img src="assets/images/svg/hobbies/Paintball.svg" alt="Paintball">
-        <img src="assets/images/svg/hobbies/Chess.svg" alt="Chess">
-        <img src="assets/images/svg/hobbies/Powerlifting.svg" alt="Powerlifting">
-        <img src="assets/images/svg/hobbies/Jogging.svg" alt="Jogging">
-        <img src="assets/images/svg/hobbies/Muaythai.svg" alt="Muaythai">
-        <img src="assets/images/svg/hobbies/Billiards.svg" alt="Billiards">
+              [place]="'Udemy'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2023'"
+              [role]="'Figma UI UX Design Advanced'"
+              [place]="'Udemy'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2022'"
+              [role]="'Angular - The Complete Guide'"
+              [place]="'Udemy'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2021'"
+              [role]="'Webflow Essentials Course'"
+              [place]="'Udemy'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2020'"
+              [role]="'Front-end Developer'"
+              [place]="'NiX Solutions'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2020'"
+              [role]="'Front-end Developer'"
+              [place]="'EPAM'">
+            </app-about-exp-case>
+          </li>
+        </ul>
       </div>
     </app-surface>
   </div>
+  <div class="about-grid__wrapper" style="grid-area: education;">
+    <app-surface class="about-grid__item">
+      <div class="about-grid__item-inner">
+        <h3 class="about-grid__title">EDUCATION</h3>
+        <ul class="about-grid__cases">
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2013 — 2019'"
+              [role]="'Electronic engineer (Master)'"
+              [place]="'Kharkiv National University of \n'+
+'Radio Electronics'">
+            </app-about-exp-case>
+          </li>
+          <li class="about-grid__cases-item">
+            <app-about-exp-case
+              [period]="'2015 — 2017'"
+              [role]="'Metrological support of troops'"
+              [place]="'Kharkiv National University\n'+
+' of the Air Force'">
+            </app-about-exp-case>
+          </li>
+        </ul>
+      </div>
+    </app-surface>
+  </div>
+<!--  <div class="about-grid__wrapper" style="grid-area: hobbies;">-->
+<!--    <app-surface class="about-grid__item">-->
+<!--      <div class="about-grid__item-inner">-->
+<!--        <h3 class="about-grid__title">HOBBIES & INTERESTS</h3>-->
+<!--        <div class="about-grid__item-hobbies">-->
+<!--          <img src="assets/images/svg/hobbies/Paintball.svg" alt="Paintball">-->
+<!--          <img src="assets/images/svg/hobbies/Chess.svg" alt="Chess">-->
+<!--          <img src="assets/images/svg/hobbies/Powerlifting.svg" alt="Powerlifting">-->
+<!--          <img src="assets/images/svg/hobbies/Jogging.svg" alt="Jogging">-->
+<!--          <img src="assets/images/svg/hobbies/Muaythai.svg" alt="Muaythai">-->
+<!--          <img src="assets/images/svg/hobbies/Billiards.svg" alt="Billiards">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </app-surface>-->
+<!--  </div>-->
 </div>

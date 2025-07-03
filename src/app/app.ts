@@ -10,7 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Header } from './structure/header/header';
 import { Main } from './structure/main/main';
 import { Footer } from './structure/footer/footer';
-import { ViewportNoiseService } from './services/noize';
+import { ViewportNoiseService } from './services/noize/noize';
 
 @Component({
   selector: 'app-root',
@@ -42,10 +42,10 @@ export class App implements AfterViewInit {
 
       const mobileOptions = {
         color: '#FFFFFF',
-        density: 0.8,
-        layerCount: 6,
-        grainSize: 0.9,
-        opacity: 0.02,
+        density: 0.7,
+        layerCount: 8,
+        grainSize: 0.6,
+        opacity: 0.025,
         frameDuration: 150,
         maxOffsetPercent: 0.99
       };

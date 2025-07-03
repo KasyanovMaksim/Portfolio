@@ -15,12 +15,16 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: inherit;
+  font-family: "Figtree", sans-serif;
   vertical-align: baseline;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
   &:focus {
     outline: none;
+  }
+  &::selection {
+    background: var(--color-neutral-200); /* Цвет фона при выделении */
+    color: var(--color-neutral-900);      /* Цвет текста при выделении */
   }
 }
 
@@ -28,7 +32,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {

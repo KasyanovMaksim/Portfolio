@@ -2,12 +2,16 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
   height: 56px;
   grid-area: header;
+  padding: 0 32px;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(4px);
 
   a{
     &.logo{
@@ -23,4 +27,10 @@
 .anchors{
   display: flex;
   gap: 8px;
+}
+@media (max-width: 768px) {
+  :host{
+
+    padding: 0 16px;
+  }
 }

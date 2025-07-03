@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { WINDOW } from '../tokens/window.token';
+import { WINDOW } from '../../tokens/window.token';
 
 interface VirtualLayer {
   pattern: CanvasPattern;

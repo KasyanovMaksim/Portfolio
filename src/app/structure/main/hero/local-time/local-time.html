@@ -1,0 +1,20 @@
+<ng-container *ngIf="showDiff(); else sameZone">
+  <p><strong>Based in Ukraine, Lviv: </strong>    <span class="digits">{{ time() }}</span>
+    <span class="suffix">{{ suffix() }}</span></p>
+  <p>
+    <strong>Time zone difference:</strong>
+    <span style="opacity: 0.6; margin-left: 8px;">
+      {{ timeDiff() > 0 ? '+' + timeDiff() : timeDiff() }}
+      hour{{ timeDiff() !== 1 && timeDiff() !== -1 ? 's' : '' }}
+    </span>
+  </p>
+</ng-container>
+
+<ng-template #sameZone>
+  <p><strong>Based in Ukraine, Lviv</strong></p>
+  <div class="time-wrapper">
+    <span class="suffix">{{ gmt() }}</span>
+    <span class="digits">{{ time() }}</span>
+    <span class="suffix">{{ suffix() }}</span>
+  </div>
+</ng-template>

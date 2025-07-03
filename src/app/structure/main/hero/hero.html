@@ -1,27 +1,114 @@
 <div class="hero__me">
   <div class="hero__me-inner">
     <img class="hero__me-img" src="assets/images/photo.png" alt="My Photo">
-    <div class="hero__me-hello">
-      <div class="hero__me-textContainer">
-        <p class="hero__me-greetings">HI THERE</p>
+    <ng-container *ngIf="isMobile(); else desktopBlock">
+      <div class="hero__me-hello">
+          <p class="hero__me-greetings">
+            <span>H</span>
+            <span>E</span>
+            <span>Y</span>
+          </p>
+          <p class="hero__me-greetings">
+            <span>I</span>
+            <span>A</span>
+            <span>M</span>
+          </p>
+          <p class="hero__me-greetings">
+            <span class="outlined">M</span>
+            <span class="outlined">A</span>
+            <span class="outlined">X</span>
+          </p>
+          <p>
+            <span>P</span>
+            <span>R</span>
+            <span>O</span>
+            <span>D</span>
+            <span>U</span>
+            <span>C</span>
+            <span>T</span>
+            <span>&nbsp;</span>
+            <span>D</span>
+            <span>E</span>
+            <span>S</span>
+            <span>I</span>
+            <span>G</span>
+            <span>N</span>
+            <span>E</span>
+            <span>R</span>
+          </p>
       </div>
-      <h1 class="hero__me-name">
-        <span>MAXIM KASYANOV</span>
-        <span>PRODUCT DESIGNER</span>
-      </h1>
-      <div class="hero__me-textContainer">
-        <p class="hero__me-greetings">I AM<span>MAX</span></p>
+    </ng-container>
+    <ng-template #desktopBlock>
+      <div class="hero__me-hello">
+        <div class="hero__me-textContainer">
+          <p class="hero__me-greetings">
+            <span>H</span>
+            <span>I</span>
+            <span>&nbsp;</span>
+            <span>T</span>
+            <span>H</span>
+            <span>E</span>
+            <span>R</span>
+            <span>E</span>
+          </p>
+        </div>
+        <h1 class="hero__me-name">
+          <p>
+            <span>M</span>
+            <span>A</span>
+            <span>X</span>
+            <span>I</span>
+            <span>M</span>
+            <span>&nbsp;</span>
+            <span>K</span>
+            <span>A</span>
+            <span>S</span>
+            <span>Y</span>
+            <span>A</span>
+            <span>N</span>
+            <span>O</span>
+            <span>V</span>
+          </p>
+          <p>
+            <span>P</span>
+            <span>R</span>
+            <span>O</span>
+            <span>D</span>
+            <span>U</span>
+            <span>C</span>
+            <span>T</span>
+            <span>&nbsp;</span>
+            <span>D</span>
+            <span>E</span>
+            <span>S</span>
+            <span>I</span>
+            <span>G</span>
+            <span>N</span>
+            <span>E</span>
+            <span>R</span>
+          </p>
+        </h1>
+        <div class="hero__me-textContainer">
+          <p class="hero__me-greetings">
+            <span>I</span>
+            <span>&nbsp;</span>
+            <span>A</span>
+            <span>M</span>
+            <span class="hero__me-greetings-space-1">&nbsp;</span>
+            <span class="outlined">M</span>
+            <span class="hero__me-greetings-space-2 outlined">A</span>
+            <span class="outlined">X</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </ng-template>
   </div>
 </div>
 <div class="hero__info">
   <div class="hero__info-wrapper">
-    <p class="hero__info-inner">
-      <span class="hero__info-location">Based in Ukraine, Lviv</span>
-      <span class="hero__info-time">4:25 PM GMT+2</span>
-    </p>
-    <div class="hero__info-scroll">Scroll</div>
+    <div class="hero__info-timezone">
+      <app-local-time></app-local-time>
+    </div>
     <p class="hero__info-availability">
       <span class="hero__info-availability-title">Available for </span>
       <span class="hero__info-availability-status">Fulltime job</span>
