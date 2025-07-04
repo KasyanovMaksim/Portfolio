@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Case } from './case';
+import { DailyHarvest } from './daily-harvest';
 
-describe('Case', () => {
-  let component: Case;
-  let fixture: ComponentFixture<Case>;
+describe('DailyHarvest', () => {
+  let component: DailyHarvest;
+  let fixture: ComponentFixture<DailyHarvest>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Case]
+      imports: [DailyHarvest]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Case);
+    fixture = TestBed.createComponent(DailyHarvest);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

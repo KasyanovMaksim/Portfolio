@@ -11,11 +11,12 @@ import { Header } from './structure/header/header';
 import { Main } from './structure/main/main';
 import { Footer } from './structure/footer/footer';
 import { ViewportNoiseService } from './services/noize/noize';
+import {ModalComponent} from './structure/modal/modal';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Header, Main, Footer],
+  imports: [Header, Main, Footer, ModalComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
