@@ -1,10 +1,9 @@
-@if (mode === 'card') {
-  <div class="case-card" (click)="open()">
-    <h3>Easy Way</h3>
-    <p>Click to open modal</p>
+<ng-container *ngIf="mode === 'card'; else modalMode">
+  <div (click)="open()">
+    <app-case-content [mode]="mode" [data]="caseData" />
   </div>
-} @else {
-  <div class="case-modal__wrapper">
+</ng-container>
 
-  </div>
-}
+<ng-template #modalMode>
+  <app-case-content [mode]="mode" [data]="caseData" />
+</ng-template>

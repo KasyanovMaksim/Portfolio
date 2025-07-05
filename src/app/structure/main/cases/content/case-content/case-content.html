@@ -1,0 +1,36 @@
+<ng-container *ngIf="isCard(); else modalTemplate">
+  <div class="case-card">
+    <img class="case-card__image" [src]="data.image" [alt]="data.title" />
+    <div class="case-card__text">
+      <h3>{{ data.title }}</h3>
+      <p>{{ data.description }}</p>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #modalTemplate>
+  <div class="case-modal">
+    <div class="case-modal__slider">
+      <img
+        *ngFor="let slide of data.slides"
+        class="case-modal__slide"
+        [src]="slide"
+        [alt]="data.title"
+      />
+    </div>
+
+    <div class="case-modal__content">
+      <h2>{{ data.title }}</h2>
+      <p>{{ data.description }}</p>
+
+      <div class="case-modal__tags">
+        <span
+          class="tag"
+          *ngFor="let tag of data.tags"
+        >
+          {{ tag }}
+        </span>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -8,6 +8,7 @@
       "node"
     ]
   },
+  "strictTemplates": false,
   "include": [
     "src/**/*.ts"
   ],
