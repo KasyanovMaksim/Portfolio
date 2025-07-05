@@ -1,10 +1,10 @@
 <div
-  class="modal-overlay"
-  *ngIf="isOpen"
-  (click)="onOverlayClick($event)"
+  class="modal-wrapper"
+  [class.visible]="isVisible()"
+  (click)="handleBackgroundClick($event)"
 >
-  <div class="modal">
-    <button class="close-btn" (click)="close()">×</button>
-    <ng-template #container></ng-template>
+  <div class="modal-box">
+    <button class="close-btn" (click)="modalService.closeModal()">×</button>
+    <ng-container #container></ng-container>
   </div>
 </div>

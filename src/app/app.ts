@@ -4,14 +4,13 @@ import {
   AfterViewInit,
   inject,
   PLATFORM_ID,
-  Inject
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Header } from './structure/header/header';
 import { Main } from './structure/main/main';
 import { Footer } from './structure/footer/footer';
 import { ViewportNoiseService } from './services/noize/noize';
-import {ModalComponent} from './structure/modal/modal';
+import { ModalComponent } from './structure/modal/modal';
 
 @Component({
   selector: 'app-root',

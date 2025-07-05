@@ -1,40 +1,40 @@
 import {
   Injectable,
-  ViewContainerRef,
-  ComponentRef,
-  EnvironmentInjector,
-  Type,
-  inject,
-  signal,
-  WritableSignal
+  Signal,
+  WritableSignal,
+  computed,
+  signal
 } from '@angular/core';
+import { ModalComponent } from '../../structure/modal/modal';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 export class ModalService {
-  private container!: ViewContainerRef;
-  private componentRef: ComponentRef<any> | null = null;
-  private readonly injector = inject(EnvironmentInjector);
+  private modalRef: ModalComponent | null = null;
 
-  isOpen: WritableSignal<boolean> = signal(false);
+  // Signals for open state and dynamic component
+  private isOpenSignal: WritableSignal<boolean> = signal(false);
+  public readonly isOpen: Signal<boolean> = computed(() => this.isOpenSignal());
 
-  registerHost(container: ViewContainerRef) {
-    this.container = container;
+  private componentType: any = null;
+  private componentProps: Record<string, any> = {};
+
+  register(modal: ModalComponent) {
+    this.modalRef = modal;
   }
 
-  openModal<T>(component: Type<T>, props?: Partial<T>) {
-    this.close(); // clear before opening another
-    this.componentRef = this.container.createComponent(component, {
-      environmentInjector: this.injector
-    });
-
-    if (props) Object.assign(this.componentRef.instance, props);
-
-    this.isOpen.set(true);
+  openModal(component: any, props: Record<string, any> = {}) {
+    if (!this.modalRef) throw new Error('ModalComponent is not registered yet.');
+    this.componentType = component;
+    this.componentProps = props;
+    this.modalRef.show(this.componentType, this.componentProps);
+    this.isOpenSignal.set(true);
   }
 
-  close() {
-    this.componentRef?.destroy();
-    this.container?.clear();
-    this.isOpen.set(false);
+  closeModal() {
+    if (!this.modalRef) return;
+    this.modalRef.hide();
+    this.isOpenSignal.set(false);
   }
 }
