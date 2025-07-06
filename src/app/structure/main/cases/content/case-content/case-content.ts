@@ -1,5 +1,6 @@
-import { Component, Input, Signal, signal, computed } from '@angular/core';
+import {Component, Input, computed, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {ModalService} from '../../../../../services/modal/modal';
 
 export type CaseMode = 'card' | 'modal';
 
@@ -23,4 +24,5 @@ export class CaseContent {
   @Input({ required: true }) data!: CaseData;
 
   readonly isCard = computed(() => this.mode === 'card');
+  readonly modal = inject(ModalService);
 }

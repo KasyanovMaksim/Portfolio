@@ -1,7 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
 import { ModalService } from '../../../../../services/modal/modal';
 import { CaseContent, CaseData } from '../case-content/case-content';
-import {NgIf} from '@angular/common';
+import { NgIf } from '@angular/common';
 
 
 @Component({
