@@ -2,6 +2,9 @@
   <div class="case-card">
     <h3 class="case-card__title">{{ data.title }}</h3>
     <div class="case-card__preview">
+      <div class="case-card__preview-logo--wrapper">
+        <img class="case-card__preview-logo" [src]="data.logo" [alt]="data.title" />
+      </div>
       <img class="case-card__image" [src]="data.image" [alt]="data.title" />
       <p>{{ data.description }}</p>
     </div>

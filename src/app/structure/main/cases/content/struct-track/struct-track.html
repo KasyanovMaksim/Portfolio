@@ -1,1 +1,7 @@
-<p>struct-track works!</p>
+<ng-container *ngIf="mode === 'card'; else modalMode">
+  <app-case-content [mode]="mode" [data]="caseData" (click)="open()"/>
+</ng-container>
+
+<ng-template #modalMode>
+  <app-case-content [mode]="mode" [data]="caseData" />
+</ng-template>

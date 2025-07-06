@@ -7,6 +7,7 @@ export type CaseMode = 'card' | 'modal';
 export interface CaseData {
   title: string;
   description: string;
+  logo: string;
   image: string;
   tags: string[];
   slides: string[];
