@@ -106,3 +106,17 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 768px) {
+  :host{
+    .case-card{
+      height: 400px;
+    }
+    .case-modal{
+      flex-direction: column;
+      &__content{
+        width: 100%;
+      }
+    }
+  }
+}
