@@ -14,7 +14,19 @@
 <ng-template #modalTemplate>
   <div class="case-modal">
     <div class="case-modal__slider">
-      <img *ngFor="let slide of data.slides" class="case-modal__slide" [src]="slide" [alt]="data.title" />
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let slide of data.slides">
+            <img [src]="slide" [alt]="data.title" />
+          </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
     </div>
 
     <aside class="case-modal__content">

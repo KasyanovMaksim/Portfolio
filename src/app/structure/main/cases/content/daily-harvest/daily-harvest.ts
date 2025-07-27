@@ -21,9 +21,9 @@ export class DailyHarvestComponent {
     image: '/assets/daily-harvest/preview.jpg',
     tags: ['UI Redesign', 'E-commerce', 'Food Tech'],
     slides: [
-      '/assets/daily-harvest/slide1.jpg',
-      '/assets/daily-harvest/slide2.jpg',
-      '/assets/daily-harvest/slide3.jpg'
+      '/assets/images/cases/image 14.png',
+      '/assets/images/cases/image 15.png',
+      '/assets/images/cases/image 14.png',
     ]
   };
 

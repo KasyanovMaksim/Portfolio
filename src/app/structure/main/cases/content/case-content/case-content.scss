@@ -45,6 +45,8 @@
       border: 1px solid var(--color-neutral-700);
       background-color: var(--color-neutral-800);
       padding: 8px;
+      flex: 1;
+      max-width: calc(100% - 420px - 8px);
     }
     &__content{
       display: flex;
@@ -99,12 +101,17 @@
       }
     }
   }
-
   .case-close-btn {
     background: transparent;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+  }
+  .swiper {
+    height: 100%;
+    img{
+      width: 100%;
+    }
   }
 }
 
