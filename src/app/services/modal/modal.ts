@@ -13,7 +13,6 @@ import { ModalComponent } from '../../structure/modal/modal';
 export class ModalService {
   private modalRef: ModalComponent | null = null;
 
-  // Signals for open state and dynamic component
   private isOpenSignal: WritableSignal<boolean> = signal(false);
   public readonly isOpen: Signal<boolean> = computed(() => this.isOpenSignal());
 
