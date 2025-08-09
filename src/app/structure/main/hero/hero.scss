@@ -14,7 +14,9 @@
       &-name{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 0 28px 0 12px;
+        gap: 16px;
       }
       &-inner{
         position: relative;
@@ -29,6 +31,7 @@
         object-fit: contain;
         border-radius: 50%;
         opacity: 0.8;
+        user-select: none;
       }
       &-hello{
         position: absolute;
@@ -39,12 +42,34 @@
       &-textContainer{
         width: 680px;
       }
+
+      &-top--text,
+      &-bot--text{
+        position: relative;
+        height: 165px;
+        overflow: hidden;
+        & .hero__me-text--inner{
+          position: absolute;
+          left: 0;
+          will-change: transform;
+          transition: transform 0.3s ease-out;
+        }
+      }
+      &-top--text .hero__me-text--inner{
+        top: 0;
+        transform: translateY(0);
+      }
+      &-bot--text .hero__me-text--inner{
+        bottom:0;
+        transform: translateY(0);
+      }
       &-greetings{
         width: auto;
         & span {
           font-size: 150px;
           font-weight: 500;
           line-height: 110%;
+          user-select: none;
           &.outlined{
             font-weight: 500;
             color: transparent;
@@ -143,11 +168,13 @@
     padding: 0 16px;
     height: 95vh;
     .hero{
+
       &__me{
         &-inner{
           position: relative;
           width: 100%;
           height: 100%;
+
         }
 
         &-hello{
@@ -169,6 +196,7 @@
         &-greetings{
           span{
             font-size: 72px;
+
           }
         }
       }

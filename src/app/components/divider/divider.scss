@@ -1,0 +1,56 @@
+:host{
+  width:100%;
+}
+.divider {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+
+  .glow {
+    position: absolute;
+    top: 50%;
+    height: 100%;
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+
+  .ltr {
+    left: -40%;
+    animation-name: slide-glow-ltr;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .rtl {
+    right: -40%;
+    animation-name: slide-glow-rtl;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes slide-glow-ltr {
+    0% {
+      left: -40%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: -40%;
+    }
+  }
+
+  @keyframes slide-glow-rtl {
+    0% {
+      right: -40%;
+    }
+    50% {
+      right: 100%;
+    }
+    100% {
+      right: -40%;
+    }
+  }
+}
+

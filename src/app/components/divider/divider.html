@@ -1,0 +1,17 @@
+<div
+  class="divider"
+  [ngStyle]="{ background: background }"
+>
+  <div
+    class="glow"
+    [ngClass]="direction === 'rtl' ? 'rtl' : 'ltr'"
+    [ngStyle]="{
+      background: glowGradient,
+      filter: 'blur(' + blur + ')',
+      width: width,
+      animationDuration: speed,
+      animationDelay: delay,
+      opacity: opacity
+    }"
+  ></div>
+</div>

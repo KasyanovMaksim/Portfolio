@@ -40,65 +40,43 @@
     </ng-container>
     <ng-template #desktopBlock>
       <div class="hero__me-hello">
-        <div class="hero__me-textContainer">
-          <p class="hero__me-greetings">
-            <span>H</span>
-            <span>I</span>
-            <span>&nbsp;</span>
-            <span>T</span>
-            <span>H</span>
-            <span>E</span>
-            <span>R</span>
-            <span>E</span>
-          </p>
+        <div class="hero__me-textContainer" #topContainer>
+          <div class="hero__me-greetings hero__me-top--text">
+            <p class="hero__me-text--inner" #topText>
+              <span>H</span>
+              <span>I</span>
+              <span>&nbsp;</span>
+              <span>T</span>
+              <span>H</span>
+              <span>E</span>
+              <span>R</span>
+              <span>E</span>
+            </p>
+          </div>
         </div>
-        <h1 class="hero__me-name">
+        <h1 class="hero__me-name" #midContainer>
           <p>
-            <span>M</span>
-            <span>A</span>
-            <span>X</span>
-            <span>I</span>
-            <span>M</span>
-            <span>&nbsp;</span>
-            <span>K</span>
-            <span>A</span>
-            <span>S</span>
-            <span>Y</span>
-            <span>A</span>
-            <span>N</span>
-            <span>O</span>
-            <span>V</span>
+            <app-text-roller text="MAXIM KASYANOV"></app-text-roller>
           </p>
+          <app-divider direction="rtl" color="#ffffff" blur="4px" width="40%" speed="6s" opacity="1"></app-divider>
           <p>
-            <span>P</span>
-            <span>R</span>
-            <span>O</span>
-            <span>D</span>
-            <span>U</span>
-            <span>C</span>
-            <span>T</span>
-            <span>&nbsp;</span>
-            <span>D</span>
-            <span>E</span>
-            <span>S</span>
-            <span>I</span>
-            <span>G</span>
-            <span>N</span>
-            <span>E</span>
-            <span>R</span>
+            <app-text-roller text="PRODUCT DESIGNER"></app-text-roller>
           </p>
         </h1>
-        <div class="hero__me-textContainer">
-          <p class="hero__me-greetings">
-            <span>I</span>
-            <span>&nbsp;</span>
-            <span>A</span>
-            <span>M</span>
-            <span class="hero__me-greetings-space-1">&nbsp;</span>
-            <span class="outlined">M</span>
-            <span class="hero__me-greetings-space-2 outlined">A</span>
-            <span class="outlined">X</span>
-          </p>
+        <div class="hero__me-textContainer" #botContainer>
+          <div class="hero__me-greetings hero__me-bot--text">
+            <p class="hero__me-text--inner" #botText>
+              <span>I</span>
+              <span>&nbsp;</span>
+              <span>A</span>
+              <span>M</span>
+              <span class="hero__me-greetings-space-1">&nbsp;</span>
+              <span class="outlined">M</span>
+              <span class="hero__me-greetings-space-2 outlined">A</span>
+              <span class="outlined">X</span>
+            </p>
+
+          </div>
         </div>
       </div>
     </ng-template>

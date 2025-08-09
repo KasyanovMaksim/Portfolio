@@ -110,6 +110,12 @@
     gap: 16px;
   }
 }
+.about__subtitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
 @media (max-width: 768px) {
   :host{
     padding: 0 16px;

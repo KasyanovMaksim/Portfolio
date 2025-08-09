@@ -1,0 +1,10 @@
+<div class="roller-container">
+  @for (char of processedChars; let i = $index; track i) {
+    <span class="char-wrapper" #charWrapper>
+      <span class="roller-inner" #inner>
+        <span class="roller-char" #char>{{ char }}</span>
+        <span class="roller-char">{{ char }}</span>
+      </span>
+    </span>
+  }
+</div>
