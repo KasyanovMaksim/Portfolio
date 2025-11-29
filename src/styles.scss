@@ -1,3 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @use "assets/styles/styles.scss";
-
+html{
+  background-color: #050506;
+}
+body.modal-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0px);
+}

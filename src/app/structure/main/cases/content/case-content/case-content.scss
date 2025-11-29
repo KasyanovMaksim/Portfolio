@@ -16,6 +16,7 @@
       border-radius: 12px;
     }
     &__preview{
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -30,76 +31,84 @@
       &-logo{
         width: 100%;
       }
-
+      .case-card__image{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+      }
     }
+
   }
   .case-modal{
-    display: flex;
+    display: grid;
+    grid-template-areas:
+    "slider          head"
+    "slider          info";
+    grid-template-columns: 1fr  420px;
+    grid-template-rows: 64px 1fr;
     height: 100%;
-    gap: 8px;
+    gap: 4px;
+    border-radius: 16px;
+    border: 1px solid var(--color-neutral-700);
+    background-color: var(--color-neutral-900);
+    padding: 4px;
 
     &__slider{
       width: 100%;
       height: 100%;
-      border-radius: 16px;
+      border-radius: 12px;
       border: 1px solid var(--color-neutral-700);
       background-color: var(--color-neutral-800);
-      padding: 8px;
       flex: 1;
-      max-width: calc(100% - 420px - 8px);
+      overflow: hidden;
+      user-select: none;
+      .swiper-button-prev,
+      .swiper-button-next{
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        &::after{display: none}
+      }
     }
-    &__content{
+    &__head{
       display: flex;
-      flex-direction: column;
-      gap: 8px;
-      width: 420px;
-      height: 100%;
-      border-radius: 16px;
+      align-items: center;
+      border-radius: 12px;
       border: 1px solid var(--color-neutral-700);
-      background-color: var(--color-neutral-900);
-      padding: 4px;
-      &-head,
-      &-body{
-        display: flex;
-        gap: 8px;
+      background-color: var(--color-neutral-800);
+      padding: 0 0 0 16px;
+      &-close{
+        font-size: 20px;
+        font-weight: 800;
+        border: none;
+        background-color: var(--color-neutral-800);
         border-radius: 12px;
-
+        color: var(--color-neutral-100);
       }
-      &-head{
+      &-title{
+        width: 100%;
+      }
+      &-link,
+      &-close{
         display: flex;
+        justify-content: center;
         align-items: center;
-        &-title,
-        &-link,
-        &-close{
-          font-size: 20px;
-          font-weight: 800;
-          border: 1px solid var(--color-neutral-700);
-          background-color: var(--color-neutral-800);
-          border-radius: 12px;
-          color: var(--color-neutral-100);
-        }
-        &-title{
-          width: 100%;
-          padding: 16px;
-        }
-        &-link,
-        &-close{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-          width: 68px;
-          cursor: pointer;
-        }
+        height: 100%;
+        width: 68px;
+        cursor: pointer;
       }
-      &-body{
+    }
+    &__info{
         flex-direction: column;
         height: 100%;
+        border-radius: 12px;
         border: 1px solid var(--color-neutral-700);
         background-color: var(--color-neutral-800);
         padding: 16px;
       }
-    }
   }
   .case-close-btn {
     background: transparent;
@@ -121,13 +130,20 @@
       height: 400px;
     }
     .case-modal{
-      flex-direction: column;
+      grid-template-areas:
+        "head"
+        "slider"
+        "info";
+      grid-template-columns: 1fr;
+      grid-template-rows: 64px 360px 1fr;
       &__slider{
         max-width: 100%;
-        min-height: 60%;
       }
       &__content{
         width: 100%;
+      }
+      &__info{
+        height: 100%;
       }
     }
   }

@@ -31,7 +31,7 @@ export class App implements AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       const isMobile = window.innerWidth <= 768; // можно подкорректировать порог
       const desktopOptions = {
-        color: '#FFFFFF',
+        color: '#c4d2ff',
         density: 1,
         layerCount: 12,
         grainSize: 1.4,
@@ -41,7 +41,7 @@ export class App implements AfterViewInit {
       };
 
       const mobileOptions = {
-        color: '#FFFFFF',
+        color: '#c4d2ff',
         density: 0.7,
         layerCount: 8,
         grainSize: 0.6,

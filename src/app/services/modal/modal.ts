@@ -24,16 +24,46 @@ export class ModalService {
   }
 
   openModal(component: any, props: Record<string, any> = {}) {
-    if (!this.modalRef) throw new Error('ModalComponent is not registered yet.');
+    if (!this.modalRef) {
+      throw new Error('ModalComponent is not registered yet.');
+    }
+
     this.componentType = component;
     this.componentProps = props;
+
+    // Блокируем скролл
+    this.lockScroll();
+
     this.modalRef.show(this.componentType, this.componentProps);
     this.isOpenSignal.set(true);
   }
 
   closeModal() {
-    if (!this.modalRef) return;
+    if (!this.modalRef) {
+      return;
+    }
+
     this.modalRef.hide();
     this.isOpenSignal.set(false);
+
+    // Возвращаем скролл
+    this.unlockScroll();
+  }
+
+  private lockScroll() {
+    if (typeof window === 'undefined') return; // на случай SSR
+
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    document.body.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+    document.body.classList.add('modal-open');
+  }
+
+  private unlockScroll() {
+    if (typeof window === 'undefined') return;
+
+    document.body.classList.remove('modal-open');
+    document.body.style.removeProperty('--scrollbar-width');
   }
 }

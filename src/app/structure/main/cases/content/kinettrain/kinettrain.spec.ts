@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DailyHarvest } from './daily-harvest';
+import { Kinettrain } from './kinettrain';
 
-describe('DailyHarvest', () => {
-  let component: DailyHarvest;
-  let fixture: ComponentFixture<DailyHarvest>;
+describe('Kinettrain', () => {
+  let component: Kinettrain;
+  let fixture: ComponentFixture<Kinettrain>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DailyHarvest]
+      imports: [Kinettrain]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DailyHarvest);
+    fixture = TestBed.createComponent(Kinettrain);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

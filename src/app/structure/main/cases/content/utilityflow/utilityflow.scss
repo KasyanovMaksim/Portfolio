@@ -1,0 +1,16 @@
+.case-card{
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 16px;
+
+  }
+  &__head,
+  &__body{
+    border: 1px solid var(--color-neutral-700);
+    border-radius: 12px;
+    padding: 16px;
+  }
+}

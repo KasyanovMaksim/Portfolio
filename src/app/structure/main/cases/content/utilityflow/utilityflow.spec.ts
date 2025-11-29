@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StructTrack } from './struct-track';
+import { Utilityflow } from './utilityflow';
 
-describe('StructTrack', () => {
-  let component: StructTrack;
-  let fixture: ComponentFixture<StructTrack>;
+describe('Utilityflow', () => {
+  let component: Utilityflow;
+  let fixture: ComponentFixture<Utilityflow>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StructTrack]
+      imports: [Utilityflow]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(StructTrack);
+    fixture = TestBed.createComponent(Utilityflow);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
