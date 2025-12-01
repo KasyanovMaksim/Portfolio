@@ -1,23 +1,23 @@
 import {Component, inject, Input} from '@angular/core';
-import {ModalService} from '../../../../../services/modal/modal';
 import {CaseContent, CaseData} from '../case-content/case-content';
 import {NgIf} from '@angular/common';
+import {ModalService} from '../../../../../services/modal/modal';
 
 @Component({
-  selector: 'app-kinettrain',
+  selector: 'app-setwise',
   standalone: true,
   imports: [CaseContent, NgIf],
-  templateUrl: './kinettrain.html',
-  styleUrl: './kinettrain.scss'
+  templateUrl: './setwise.html',
+  styleUrl: './setwise.scss'
 })
-export class KinetTrain {
+export class Setwise {
   @Input() mode: 'card' | 'modal' = 'card';
 
   private modal = inject(ModalService);
 
   caseData: CaseData = {
-    title: 'KinetTrain',
-    description: 'Build personalized workout plans based on your goals, time, equipment, and experience. Track progress, log workouts, and see real results through adaptive training cycles and clear performance insights.',
+    title: 'SetWise',
+    description: 'Personal Training & Progress Planner',
     logo: 'assets/images/cases/utilityflow/UtilityFlow Logo.svg',
     image: 'assets/images/cases/utilityflow/UtilityFlow Preview.png',
     tags: ['Accessibility', 'Travel', 'UX'],
@@ -29,6 +29,6 @@ export class KinetTrain {
   };
 
   open() {
-    this.modal.openModal(KinetTrain, { mode: 'modal' });
+    this.modal.openModal(Setwise, { mode: 'modal' });
   }
 }

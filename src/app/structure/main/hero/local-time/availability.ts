@@ -3,13 +3,13 @@ import { NgIf } from '@angular/common';
 import { TimeService } from '../../../../services/time/time';
 
 @Component({
-  selector: 'app-local-time',
+  selector: 'app-availability',
   standalone: true,
   imports: [NgIf],
-  templateUrl: './local-time.html',
-  styleUrl: './local-time.scss'
+  templateUrl: './availability.html',
+  styleUrl: './availability.scss'
 })
-export class LocalTime implements OnInit, OnDestroy {
+export class Availability implements OnInit, OnDestroy {
   readonly time = signal('');
   readonly suffix = signal('');
   readonly gmt = signal('');

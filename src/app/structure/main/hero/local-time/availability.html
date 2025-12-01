@@ -1,0 +1,42 @@
+  <ng-container *ngIf="showDiff(); else sameZone">
+    <div class="local-time">
+      <div class="local-time__wrapper">
+        <div class="local-time__inner">
+          <p class="local-time__title">Based in Ukraine, Lviv </p>
+          <p class="local-time__clock">
+            <span class="local-time__clock-gmt">{{ gmt() }}</span>
+            <span class="local-time__clock-digits">{{ time() }}</span>
+            <span class="local-time__clock-suffix">{{ suffix() }}</span>
+          </p>
+        </div>
+        <div class="local-time__inner">
+          <p class="local-time__title">Time zone difference</p>
+          <p class="local-time__difference">
+            {{ timeDiff() > 0 ? '+' + timeDiff() : timeDiff() }}
+            hour{{ timeDiff() !== 1 && timeDiff() !== -1 ? 's' : '' }}
+          </p>
+        </div>
+      </div>
+      <div class="availability">
+        <span class="local-time__title">Available for </span>
+        <span class="availability__status">Fulltime job</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #sameZone>
+    <div class="local-time no-diff">
+      <div class="local-time__inner">
+        <p class="local-time__title">Based in Ukraine, Lviv</p>
+        <p class="local-time__clock">
+          <span class="local-time__clock-gmt">{{ gmt() }}</span>
+          <span class="local-time__clock-digits">{{ time() }}</span>
+          <span class="local-time__clock-suffix">{{ suffix() }}</span>
+        </p>
+      </div>
+      <div class="availability">
+        <span class="local-time__title">Available for </span>
+        <span class="availability__status">Fulltime job</span>
+      </div>
+    </div>
+  </ng-template>

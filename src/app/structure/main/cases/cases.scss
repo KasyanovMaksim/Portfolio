@@ -10,19 +10,27 @@
   gap: 16px;
   justify-content: center;
   flex-wrap: nowrap;
-  &  > * {
-    flex: 1 1 33.333%;
-    max-width: 33.333%;
-    border: 1px solid var(--color-neutral-700);
-    background-color: var(--color-neutral-900);
-    border-radius: 16px;
-    min-height: 600px;
-    transition: all 300ms ease;
-    &:hover{
-      flex: 1 1 37%;
-      max-width: 37%;
-    }
-  }
+}
+
+.cases__wrapper > * {
+  flex: 1 1 33.333%;
+  max-width: 33.333%;
+  min-width: 0;              // важно: иначе карточка может отказаться сжиматься
+  height: 600px;             // фиксированная высота вместо min-height
+  overflow: hidden;          // чтобы контент не выдавливал высоту
+  border: 1px solid var(--color-neutral-700);
+  background-color: var(--color-neutral-900);
+  border-radius: 16px;
+
+  /* анимируем ТОЛЬКО ширину */
+  transition:
+    flex-basis 300ms ease,
+    max-width 300ms ease;
+}
+
+.cases__wrapper > *:hover {
+  flex-basis: 37%;
+  max-width: 37%;
 }
 .cases__subtitle{
   display: flex;

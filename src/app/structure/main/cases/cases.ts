@@ -4,7 +4,7 @@ import {TextRoller} from '../../../components/text-roller/text-roller';
 import {Divider} from '../../../components/divider/divider';
 import {Utilityflow} from './content/utilityflow/utilityflow';
 import {SwiftCV} from './content/swiftcv/swiftcv';
-import {KinetTrain} from './content/kinettrain/kinettrain';
+import {Setwise} from './content/setwise/setwise';
 
 @Component({
   selector: 'section-cases',
@@ -14,7 +14,7 @@ import {KinetTrain} from './content/kinettrain/kinettrain';
     Divider,
     Utilityflow,
     SwiftCV,
-    KinetTrain
+    Setwise
   ],
   templateUrl: './cases.html',
   styleUrl: './cases.scss'

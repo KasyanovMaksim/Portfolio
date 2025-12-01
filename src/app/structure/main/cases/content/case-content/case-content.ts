@@ -45,6 +45,8 @@ export class CaseContent implements AfterViewInit {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+        bulletClass: 'case-modal__bullet',
+        bulletActiveClass: 'case-modal__bullet-active',
       },
     });
   }

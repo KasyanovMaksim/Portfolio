@@ -46,6 +46,10 @@
     background-color: var(--color-neutral-800);
     border-radius: 12px;
     overflow: hidden;
+    & + .colors{
+      height: 100%;
+      width: auto;
+    }
     &-title{
       font-size: 20px;
       font-weight: 500;

@@ -1,5 +1,5 @@
 import {Component, ElementRef, signal, ViewChild} from '@angular/core';
-import {LocalTime} from './local-time/local-time';
+import {Availability} from './local-time/availability';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import {NgIf} from '@angular/common';
 import {TextRoller} from '../../../components/text-roller/text-roller';
@@ -8,7 +8,7 @@ import {Divider} from '../../../components/divider/divider';
 @Component({
   selector: 'section-hero',
   imports: [
-    LocalTime,
+    Availability,
     NgIf,
     TextRoller,
     Divider

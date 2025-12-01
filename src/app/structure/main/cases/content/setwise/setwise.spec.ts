@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocalTime } from './local-time';
+import { Setwise } from './setwise';
 
-describe('LocalTime', () => {
-  let component: LocalTime;
-  let fixture: ComponentFixture<LocalTime>;
+describe('Setwise', () => {
+  let component: Setwise;
+  let fixture: ComponentFixture<Setwise>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LocalTime]
+      imports: [Setwise]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LocalTime);
+    fixture = TestBed.createComponent(Setwise);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

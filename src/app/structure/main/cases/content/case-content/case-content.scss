@@ -7,7 +7,7 @@
     height: 100%;
     padding: 4px;
     &__title{
-      height: 56px;
+      min-height: 56px;
       display: flex;
       align-items: center;
       padding: 0 16px;
@@ -26,21 +26,22 @@
       background-color: var(--color-neutral-800);
       border-radius: 12px;
       &-logo--wrapper{
-        width: 64px;
+        width: 40px;
       }
       &-logo{
         width: 100%;
       }
-      .case-card__image{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        transform: translate(-50%, -50%);
-      }
-    }
 
+    }
+    &__image{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
   }
+
   .case-modal{
     display: grid;
     grid-template-areas:
@@ -127,7 +128,14 @@
 @media (max-width: 768px) {
   :host{
     .case-card{
-      height: 400px;
+      height: auto;
+      &__image{
+        position: static;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: none;
+      }
     }
     .case-modal{
       grid-template-areas:
