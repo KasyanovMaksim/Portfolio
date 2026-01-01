@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  margin-bottom: 50px;
-  padding: 0 32px;
+  padding: 160px 32px 0;
+  margin-bottom: 32px;
 }
 .about-grid {
   display: grid;
@@ -110,7 +110,9 @@
     font-weight: bold;
   }
 }
+
 .about-grid{
+  width: 100%;
   &__cases{
     display: flex;
     flex-direction: column;
@@ -122,10 +124,14 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  &.mobile{
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   :host{
-    padding: 0 16px;
+    padding: 80px 16px 0;
+    gap: 24px;
   }
   .about-grid {
     grid-template-columns: repeat(1, auto);
@@ -140,5 +146,13 @@
       "education"
       "mainTools"
       "hobbies"
+  }
+  .about__subtitle{
+    &.mobile{
+      display: flex;
+    }
+    &.desktop{
+      display: none;
+    }
   }
 }

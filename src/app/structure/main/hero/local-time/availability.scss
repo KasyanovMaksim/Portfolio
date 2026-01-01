@@ -8,6 +8,7 @@
 .local-time{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   &__wrapper{
     display: flex;
@@ -16,10 +17,14 @@
   }
   &__inner{
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 8px;
+    flex-direction: column;
     width: 200px;
+    &.difference{
+      flex-direction: row;
+      align-items: center;
+      color: var(--color-neutral-500);
+      font-size: 14px;
+    }
   }
   &__title{
     font-size: 16px;
@@ -44,21 +49,11 @@
     font-size: 14px;
     font-weight: 400;
   }
-  &.no-diff{
-    flex-direction: row;
-    justify-content: space-between;
-    .local-time__inner{
-      flex-direction: column;
-      align-items: start;
-      gap: 0;
-    }
-  }
 }
 
 .availability{
   display: flex;
   align-items: end;
-  justify-content: end;
   flex-direction: column;
 
   &__title{
@@ -92,41 +87,5 @@
 
 @media (max-width: 768px) {
   :host{
-    .local-time{
-      flex-direction: column;
-      gap: 8px;
-      height: 100%;
-      padding-bottom: 24px;
-      &__wrapper{
-        gap: 8px;
-      }
-      &.no-diff{
-        flex-direction: row;
-        justify-content: space-between;
-        .availability{
-          flex-direction: column;
-          &__status{
-            color: var(--color-neutral-500);
-            &::before{
-              display: block;
-            }
-          }
-
-        }
-      }
-      .availability{
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        flex-direction: row;
-        &__status{
-          color: #6ace70;
-          &::before{
-            display: none;
-          }
-        }
-
-      }
-    }
   }
 }

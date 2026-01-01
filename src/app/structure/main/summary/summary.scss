@@ -1,8 +1,7 @@
 :host{
   display: flex;
   gap: 16px;
-  margin-bottom: 100px;
-  padding: 0 32px;
+  padding: 160px 32px 0;
   & > *{
     width: 50%;
   }
@@ -11,7 +10,7 @@
 .summary-description{
   display: flex;
   align-items: center;
-  font-size: 36px;
+  font-size: 32px;
   color: var(--color-neutral-600);
   padding-right: 5%;
   span{
@@ -21,20 +20,26 @@
 
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-template-rows: repeat(5, 1fr);
   gap: 16px;
   min-height: 600px;
+  grid-auto-columns: 1fr;
   grid-template-areas:
-    "components     icons       wireframes    foundations       foundations"
-    "elements       elements    elements      foundations       foundations"
-    "elements       elements    elements      project           project"
-    "benefits       benefits    scroll        documentation     documentation"
-    "benefits       benefits    scroll        documentation     documentation";
+    "typography     elements    elements      elements    elements"
+    "sizes          elements    elements      elements    elements"
+    "colors         elements    elements      elements    elements"
+    "graphic        elements    elements      elements    elements"
+    "components     elements    elements      elements    elements";
+  &  > * {
+    min-width: 0; // чтобы контент не мог расширять колонку
+  }
   div{
     display: flex;
     height: 100%;
+    align-self: stretch;
   }
+
   &__item{
     display: flex;
     align-items: center;
@@ -46,6 +51,7 @@
     background-color: var(--color-neutral-800);
     border-radius: 12px;
     overflow: hidden;
+    padding: 4px;
     & + .colors{
       height: 100%;
       width: auto;
@@ -62,34 +68,57 @@
     &-img{
       width: 100%;
       height: 100%;
+      display: block;
     }
+    &-main{
+      padding: 0 !important;
+    }
+    &-square {
+      aspect-ratio: 1 / 1;
+      img{
+        object-fit: contain;
+      }
+
+    }
+
   }
 }
+
+
 @media (max-width: 768px) {
   :host{
-    padding: 0 16px;
+    padding: 80px 16px 0;
     flex-direction: column;
     & > *{
       width: 100%;
     }
   }
 
+
   .summary-grid {
-    div:nth-child(8){
-      display: none;
-    }
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    min-height: 0;
+    gap: 8px;
     grid-template-areas:
-    "components        icons                wireframes"
-    "elements          elements               elements"
-    "benefits          benefits               benefits"
-    "foundations       foundations         foundations"
-    "project           project                 project"
-    "documentation     documentation     documentation"
+    "elements     elements    elements      elements    elements"
+    "elements     elements    elements      elements    elements"
+    "elements     elements    elements      elements    elements"
+    "elements     elements    elements      elements    elements"
+    "typography   sizes       colors        graphic     components";
+    div{
+      height: auto;
+    }
+    .summary-grid__item {
+      height: auto;
+    }
+    &__main{
+      width: calc(100% - 64px);
+    }
   }
 
   .summary-description{
     padding: 0;
-    font-size: 32px;
+    font-size: 26px;
   }
 }

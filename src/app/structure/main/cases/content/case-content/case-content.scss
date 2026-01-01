@@ -14,22 +14,27 @@
       border: 1px solid var(--color-neutral-700);
       background-color: var(--color-neutral-800);
       border-radius: 12px;
+      transition: 0.35s ease;
     }
     &__preview{
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 8px;
       height: 100%;
       padding: 16px;
       border: 1px solid var(--color-neutral-700);
       background-color: var(--color-neutral-800);
       border-radius: 12px;
+      transition: 0.35s ease;
       &-logo--wrapper{
         width: 40px;
       }
       &-logo{
         width: 100%;
+        opacity: 0.3;
+        transition: 0.25s;
       }
 
     }
@@ -39,6 +44,40 @@
       left: 50%;
       width: 100%;
       transform: translate(-50%, -50%);
+      transition: 0.35s ease;
+    }
+    &__description{
+      display: flex;
+      align-items: end;
+      max-width: 320px;
+      height: 100%;
+    }
+    &__tags{
+      display: flex;
+      gap: 8px;
+      &-item{
+        background-color: var(--color-neutral-700);
+        padding: 4px 8px;
+        font-size: 12px;
+        border-radius: 12px;
+        transition: 0.35s ease;
+      }
+    }
+    &:hover{
+      .case-card{
+        &__title {
+          //background-color: var(--title-bg, var(--color-neutral-800));
+        }
+        &__preview {
+          //background-color: var(--preview-bg, var(--color-neutral-800));
+          &-logo{
+            opacity: 0.7;
+          }
+        }
+        &__image{
+          width: 105%;
+        }
+      }
     }
   }
 
@@ -61,7 +100,7 @@
       height: 100%;
       border-radius: 12px;
       border: 1px solid var(--color-neutral-700);
-      background-color: var(--color-neutral-800);
+      background-color: var(--preview-bg, var(--color-neutral-800));
       flex: 1;
       overflow: hidden;
       user-select: none;
@@ -103,13 +142,53 @@
       }
     }
     &__info{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--color-neutral-700);
+      background-color: var(--color-neutral-800);
+      padding: 16px;
+      gap: 32px;
+      &-wrapper{
+        display: flex;
         flex-direction: column;
-        height: 100%;
-        border-radius: 12px;
-        border: 1px solid var(--color-neutral-700);
-        background-color: var(--color-neutral-800);
-        padding: 16px;
+        gap: 8px;
       }
+      &-contribution{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        &--item{
+          position: relative;
+          padding-left: 24px;
+          &::before{
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 4px;
+            background-color: var(--color-neutral-700);
+            border: 1px solid var(--color-neutral-100);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+          }
+        }
+      }
+      &-links{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        &--link{
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--color-neutral-100);
+          text-decoration: none;
+
+        }
+      }
+    }
   }
   .case-close-btn {
     background: transparent;
@@ -129,6 +208,17 @@
   :host{
     .case-card{
       height: auto;
+      &__title {
+        //background-color: var(--title-bg, var(--color-neutral-800));
+      }
+      &__preview {
+        //background-color: var(--preview-bg, var(--color-neutral-800));
+        &-logo{
+          width: 100%;
+          opacity: 0.7;
+          transition: 0.25s;
+        }
+      }
       &__image{
         position: static;
         top: 0;
@@ -138,12 +228,16 @@
       }
     }
     .case-modal{
+      position: relative;
       grid-template-areas:
         "head"
         "slider"
         "info";
       grid-template-columns: 1fr;
-      grid-template-rows: 64px 360px 1fr;
+      grid-template-rows: 64px 300px 1fr;
+      &__head{
+
+      }
       &__slider{
         max-width: 100%;
       }
@@ -152,6 +246,7 @@
       }
       &__info{
         height: 100%;
+        overflow-y: scroll;
       }
     }
   }

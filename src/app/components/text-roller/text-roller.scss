@@ -1,3 +1,7 @@
+:host {
+  display: flex;
+  align-items: center;
+}
 .roller-container {
   display: inline-flex;
   font-family: inherit;
@@ -29,4 +33,12 @@
   text-rendering: geometricPrecision;
   color: var(--color-neutral-600);
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  :host {
+    .roller-char {
+      font-size: 12px;
+    }
+  }
 }

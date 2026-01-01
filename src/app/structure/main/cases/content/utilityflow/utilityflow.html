@@ -1,7 +1,7 @@
 <ng-container *ngIf="mode === 'card'; else modalMode">
-  <app-case-content [mode]="mode" [data]="caseData" (click)="open()"/>
+  <app-case-content [titleBg]="cardTitleBg" [previewBg]="cardPreviewBg" [mode]="mode" [data]="caseData"  (click)="open()"/>
 </ng-container>
 
 <ng-template #modalMode>
-  <app-case-content [mode]="mode" [data]="caseData" />
+  <app-case-content [previewBg]="cardPreviewBg" [mode]="mode" [data]="caseData" />
 </ng-template>
